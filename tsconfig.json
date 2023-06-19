@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "noEmit": true,
+        "target": "esnext",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true
+    },
+    "include": ["src"]
+}
