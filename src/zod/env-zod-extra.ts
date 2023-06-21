@@ -4,7 +4,7 @@ const commonEnvSchema = z.object({
     CI_ACTION: z.enum(["deploy", "test"]),
 });
 
-const environmentSchema = z.enum(["test", "prod"]).default("test");
+const environmentSchema = z.enum(["test", "prod"]);
 
 const deployEnvSchema = z
     .object({
@@ -22,8 +22,8 @@ const testEnvSchema = z
         CI_ACTION: z.literal("test"),
         FALLBACK_ENVIRONMENT: environmentSchema,
         NONEMPTY_STRING: z.string().nonempty(),
-        SHORT_ARRAY: z.array(z.number()).refine((val) => val.length < 10),
         UPPERCASE_STRING: z.string().refine((val) => val === val.toUpperCase()),
+        NUMBER_ARRAY: z.array(z.number()),
     })
     .and(commonEnvSchema);
 
